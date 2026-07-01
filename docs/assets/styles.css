@@ -1,0 +1,238 @@
+:root {
+  --yale-blue: #00356b;
+  --yale-blue-dark: #002144;
+  --yale-accent: #286dc0;
+  --ink: #1a1a1a;
+  --muted: #5c6b7a;
+  --line: #dfe3e8;
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --warn-bg: #fff7e6;
+  --warn-line: #e0a800;
+  --radius: 8px;
+  --wrap: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Mallory", "Helvetica Neue", Arial, system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.site-header {
+  background: var(--yale-blue);
+  color: #fff;
+  border-bottom: 4px solid var(--yale-accent);
+}
+.header-inner {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 18px 20px;
+  flex-wrap: wrap;
+}
+.brand { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-mark { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.5px; }
+.brand-sub { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.85; }
+.site-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding-left: 24px;
+  border-left: 1px solid rgba(255,255,255,0.35);
+}
+
+/* Disclaimer */
+.disclaimer {
+  background: var(--warn-bg);
+  border-bottom: 1px solid var(--warn-line);
+  font-size: 0.92rem;
+}
+.disclaimer .wrap { padding: 12px 20px; }
+
+/* Controls */
+.main { padding: 24px 20px 60px; }
+.controls {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.control { display: flex; flex-direction: column; gap: 4px; }
+.control label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.control select, .control input {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.95rem;
+  min-width: 200px;
+}
+.run-meta {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.85rem;
+  align-self: center;
+  text-align: right;
+}
+
+/* Table */
+.table-scroll {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.grid { width: 100%; border-collapse: collapse; }
+.grid thead th {
+  background: #eef1f4;
+  color: var(--yale-blue-dark);
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.grid tbody tr {
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+.grid tbody tr:hover { background: #f0f6ff; }
+.grid tbody tr:last-child { border-bottom: none; }
+.grid td { padding: 10px 14px; vertical-align: middle; }
+
+.col-thumb { width: 96px; }
+.col-id { width: 110px; white-space: nowrap; }
+.col-label { width: 220px; }
+
+.thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #e9edf1;
+  border: 1px solid var(--line);
+  display: block;
+}
+.thumb.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-align: center;
+}
+.obj-id { font-weight: 600; color: var(--yale-blue); }
+.alt-preview {
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+.badge-err {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: #a10000;
+  background: #fdecea;
+  border: 1px solid #f5c2c0;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* Pager */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+.page-info { color: var(--muted); font-size: 0.9rem; min-width: 200px; text-align: center; }
+.btn {
+  background: var(--yale-blue);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.btn:hover { background: var(--yale-blue-dark); }
+.btn:disabled { background: #b9c2cc; cursor: not-allowed; }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: #fff;
+  padding: 20px 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.site-footer a { color: var(--yale-accent); }
+
+/* Modal */
+.modal { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; }
+.modal[hidden] { display: none; }
+.modal-overlay { position: absolute; inset: 0; background: rgba(0,20,45,0.6); }
+.modal-card {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  max-width: 900px;
+  width: calc(100% - 40px);
+  max-height: calc(100% - 40px);
+  overflow: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+.modal-close {
+  position: absolute; top: 8px; right: 12px;
+  background: none; border: none; font-size: 1.8rem; line-height: 1;
+  color: var(--muted); cursor: pointer;
+}
+.modal-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.modal-image { background: #0c1a2b; display: flex; align-items: center; justify-content: center; }
+.modal-image img { max-width: 100%; max-height: 70vh; display: block; }
+.modal-info { padding: 24px; }
+.modal-info h2 { margin: 0 0 4px; color: var(--yale-blue); font-size: 1.15rem; }
+.modal-view { margin: 0 0 12px; color: var(--muted); font-size: 0.85rem; }
+.modal-info h3 { margin: 14px 0 6px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+.modal-alt { font-size: 1rem; margin: 0 0 12px; }
+.ai-badge {
+  display: inline-block;
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-line);
+  color: #7a5c00;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.modal-note { font-size: 0.8rem; color: var(--muted); font-style: italic; }
+.modal-links a { color: var(--yale-accent); font-size: 0.85rem; }
+
+@media (max-width: 720px) {
+  .modal-body { grid-template-columns: 1fr; }
+  .col-label { display: none; }
+  .site-title { padding-left: 0; border-left: none; }
+  .run-meta { margin-left: 0; text-align: left; }
+}

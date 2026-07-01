@@ -1,0 +1,16 @@
+{
+  "collection": {
+    "name": "Yale Center for British Art",
+    "abbr": "YCBA"
+  },
+  "runs": [
+    {
+      "id": "20260701-152918-test-run-100",
+      "label": "Test run — 100 objects",
+      "date": "2026-07-01",
+      "model": "gemini-3.1-flash-lite",
+      "count": 100,
+      "file": "data/runs/20260701-152918-test-run-100.json"
+    }
+  ]
+}

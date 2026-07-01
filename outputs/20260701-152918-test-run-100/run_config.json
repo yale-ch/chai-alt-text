@@ -1,0 +1,12 @@
+{
+  "timestamp": "20260701-152918",
+  "model": "gemini-3.1-flash-lite",
+  "vertex_project": "cultural-heritage-gemini",
+  "location": "global",
+  "workers": 20,
+  "urls_csv": "/Users/wjm55/chai-alt-text/data/urls.csv",
+  "limit": null,
+  "first_image_only": true,
+  "num_catalog_urls": 100,
+  "prompt": "You are writing alt-text to make an image accessible to people who cannot see it.\n\nDescribe ONLY what is actually visible in this image. Do not use any outside knowledge about the image, and do not try to identify it.\n\nFollow these rules exactly:\n- Write between 4 and 6 sentences. No more, no fewer.\n- Write at an 8th-grade reading level.\n- Use short, plain, direct sentences.\n- Name the objects you can see in the image, then describe each one in a basic way (its shape, color, size, and where it sits in the image).\n- Describe only what is visible. Do not guess.\n- Do not guess at historical context, time period, meaning, or symbolism.\n- Do not name specific real people, artists, places, or events.\n- Do not begin with phrases like \"Image of\", \"Picture of\", \"This image shows\", or \"Alt text:\". Start with the description itself.\n\nReturn only the alt-text as plain text."
+}
